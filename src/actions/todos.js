@@ -1,10 +1,11 @@
 import uuid from 'uuid';
 
 //add todos
-export const addTodos=(
+export const addTodo=(
  {
      eventName='',
      description='',
+     importance ='',
      createdAt=0
  } = {}
 )=>({
@@ -13,6 +14,7 @@ export const addTodos=(
         id:uuid(),
         eventName,
         description,
+        importance,
         createdAt
     }
 });

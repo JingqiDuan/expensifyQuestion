@@ -10,7 +10,7 @@ const todosReducer = (state = todosReducerDefaultState, action) => {
                 action.todo
             ];
         case 'REMOVE_TODO':
-            return state.filter(({id})=>id !==action.id);
+            return state.filters(({id})=>id !==action.id);
         case 'EDIT_TODO':
             return state.map((todo)=>{
                 if(todo.id === action.id){

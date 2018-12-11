@@ -20,6 +20,13 @@ export default (state = filtersReducerDefaultState, action) => {
             ...state,
             sortBy: 'DATE'
         };
+
+        case 'SORT_BY_IMPORTANCE':
+        return {
+            ...state,
+            sortBy: 'IMPORTANCE'
+        };
+
       case 'SET_START_DATE':
        return{
            ...state,

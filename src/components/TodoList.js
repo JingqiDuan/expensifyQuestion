@@ -1,19 +1,23 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import {connect} from 'react-redux'; 
+import TodoListItem from './TodoListItem';
+import selectedTodos from '../selectors/todos';
 
 const TodoList = (props) => (
 <div>
     <h1>Todo List</h1>
-    {props.todos.length}
+    {props.todos.map((todo)=>{
+        
+        return <TodoListItem key={todo.id}{...todo}/>; //using spread operator made properties of a Todo past into props
+    })}
+    
 </div>
 );
 
 
-
 const mapStateToProps = (state)=>{
     return{
-        todos: state.todos,
-        filter: state.filter
+        todos: selectedTodos(state.todos,state.filters)
     };
 };
 
